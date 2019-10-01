@@ -1,0 +1,32 @@
+/* Genearl Styling */
+footer{
+    padding-top: 100px;
+}
+
+footer p{
+    text-align: center;
+    padding: 20px;
+    background: #cccc;
+    color: white;
+    margin: 0;
+}
+
+/* Carousel Styling */
+@media only screen and (min-width: 768px) {
+    .carousel-item{
+        height: 100vh;
+    }
+}
+
+.carousel-item h1{
+    text-transform: uppercase;
+}
+
+.carousel-caption{
+    bottom: 50vh !important;
+}
+
+/* Gallery Styling */
+.Gallery div.container h1{
+    padding-top: 50px;
+}
