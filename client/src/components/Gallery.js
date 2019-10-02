@@ -13,7 +13,7 @@ export class Gallery extends Component {
     }
 
     componentDidMount(){
-        axios.get('/api/photos/random?count=20&orientation=portrait').then(res => {
+        axios.get('/api/photos/random?count=30&orientation=portrait').then(res => {
           this.setState({images: res.data});
           console.log(res.data);
         });

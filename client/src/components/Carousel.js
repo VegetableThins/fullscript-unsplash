@@ -12,7 +12,7 @@ export class Carousel extends Component {
   }
 
   componentDidMount(){
-    axios.get('/api/photos/random?count=5&orientation=landscape').then(res => {
+    axios.get('/api/photos/random?count=7&orientation=landscape').then(res => {
       this.setState({images: res.data});
       console.log(res.data);
     });

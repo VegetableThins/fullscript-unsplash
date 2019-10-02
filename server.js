@@ -22,12 +22,13 @@ app.get('/api/photos/random', (req, res) => {
     .then(json => res.json(json));
 });
 
-app.get('/api/stats/total', (req, res) => {
-    unsplash.stats
-            .total()
-            .then(toJson)
-            .then(json => res.json(json));
-});
+//was going to add a statistics section
+// app.get('/api/stats/total', (req, res) => {
+//     unsplash.stats
+//             .total()
+//             .then(toJson)
+//             .then(json => res.json(json));
+// });
 
 const PORT = process.env.PORT || 5000;
 
