@@ -1,25 +1,26 @@
-global.fetch = require('node-fetch');
+global.fetch = require("node-fetch");
 const config = require("universal-config");
-const Unsplash = require('unsplash-js').default;
-const toJson = require('unsplash-js').toJson;
-const express = require('express');
+const Unsplash = require("unsplash-js").default;
+const toJson = require("unsplash-js").toJson;
+const express = require("express");
 
 const unsplash = new Unsplash({
-    applicationId: config.get('APPLICATION_ID'),
-    secret: config.get('SECRET'),
-    callbackUrl: config.get('CALLBACK_URL')
+  applicationId: config.get("APPLICATION_ID"),
+  secret: config.get("SECRET"),
+  callbackUrl: config.get("CALLBACK_URL"),
 });
 
 const app = express();
 
-app.get('/api/photos/random', (req, res) => {
-    unsplash.photos
+app.get("/api/photos/random", (req, res) => {
+  console.log(req);
+  unsplash.photos
     .getRandomPhoto({
-        count: req.query.count,
-        orientation: req.query.orientation || ''
+      count: req.query.count,
+      orientation: req.query.orientation || "",
     })
     .then(toJson)
-    .then(json => res.json(json));
+    .then((json) => res.json(json));
 });
 
 //was going to add a statistics section
